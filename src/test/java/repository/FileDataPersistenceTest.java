@@ -22,10 +22,13 @@ public class FileDataPersistenceTest extends TestCase {
 
     }
 
+    FileDataPersistence studentsDataPersistance = new FileDataPersistence("students.txt");
+    FileDataPersistence laboratoryDataPersistance = new FileDataPersistence("laboratories.txt");
+    LaboratoriesController ctrl = new LaboratoriesController("students.txt", "laboratories.txt");
+
     public void testSaveStudent() throws Exception {
         System.out.println("\n TEST - Save student \n");
 
-        LaboratoriesController ctrl = new LaboratoriesController("students.txt", "laboratories.txt");
 
         Student student = new Student("asdf4455", "mircea bravo", 933);
         ctrl.saveStudent(student);
@@ -78,9 +81,8 @@ public class FileDataPersistenceTest extends TestCase {
 
     public void testGetLaboratoryMap() throws Exception {
         System.out.println("TEST - Get laboratory map");
-        FileDataPersistence fileDataPersistence = new FileDataPersistence("laboratories.txt");
         //LaboratoriesController ctrl = new LaboratoriesController("students.txt", "laboratories.txt");
-        Map<String, List<Laboratory>> laboratoryMap = fileDataPersistence.getLaboratoryMap();
+        Map<String, List<Laboratory>> laboratoryMap = laboratoryDataPersistance.getLaboratoryMap();
         for(Map.Entry<String, List<Laboratory>> l: laboratoryMap.entrySet()) {
             assertEquals(l.getKey(), "asdf4455");
             List<Laboratory> list = l.getValue();
@@ -96,9 +98,9 @@ public class FileDataPersistenceTest extends TestCase {
     public void testGetStudentsList() throws Exception {
         System.out.println("TEST - Get students list");
 
-        FileDataPersistence fileDataPersistence = new FileDataPersistence("students.txt");
 
-        List<Student> students = fileDataPersistence.getStudentsList();
+
+        List<Student> students = studentsDataPersistance.getStudentsList();
         assertEquals(students.size(), 1);
         assertEquals(students.get(0).getName(), "mircea bravo");
         assertEquals(students.get(0).getGroup(), 933);
