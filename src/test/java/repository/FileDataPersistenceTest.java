@@ -22,9 +22,9 @@ public class FileDataPersistenceTest extends TestCase {
 
     }
 
-    FileDataPersistence studentsDataPersistance = new FileDataPersistence("students.txt");
-    FileDataPersistence laboratoryDataPersistance = new FileDataPersistence("laboratories.txt");
-    LaboratoriesController ctrl = new LaboratoriesController("students.txt", "laboratories.txt");
+    private FileDataPersistence studentsDataPersistance = new FileDataPersistence("students.txt");
+    private FileDataPersistence laboratoryDataPersistance = new FileDataPersistence("laboratories.txt");
+    private LaboratoriesController ctrl = new LaboratoriesController("students.txt", "laboratories.txt");
 
     public void testSaveStudent() throws Exception {
         System.out.println("\n TEST - Save student \n");
@@ -82,6 +82,7 @@ public class FileDataPersistenceTest extends TestCase {
     public void testGetLaboratoryMap() throws Exception {
         System.out.println("TEST - Get laboratory map");
         //LaboratoriesController ctrl = new LaboratoriesController("students.txt", "laboratories.txt");
+        testAddGrade();
         Map<String, List<Laboratory>> laboratoryMap = laboratoryDataPersistance.getLaboratoryMap();
         for(Map.Entry<String, List<Laboratory>> l: laboratoryMap.entrySet()) {
             assertEquals(l.getKey(), "asdf4455");
