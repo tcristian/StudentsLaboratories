@@ -82,7 +82,6 @@ public class FileDataPersistenceTest extends TestCase {
     public void testGetLaboratoryMap() throws Exception {
         System.out.println("TEST - Get laboratory map");
         //LaboratoriesController ctrl = new LaboratoriesController("students.txt", "laboratories.txt");
-        testAddGrade();
         Map<String, List<Laboratory>> laboratoryMap = laboratoryDataPersistance.getLaboratoryMap();
         for(Map.Entry<String, List<Laboratory>> l: laboratoryMap.entrySet()) {
             assertEquals(l.getKey(), "asdf4455");
