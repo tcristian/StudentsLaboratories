@@ -67,7 +67,8 @@ public class LaboratoriesController {
     public void getLaboratoryMap() {
         try {
             Map<String, List<Laboratory>> laboratoryMap = this.laboratoryPersistence.getLaboratoryMap();
-            //System.out.println(laboratoryMap.toString());
+            System.out.println(laboratoryMap.toString());
+
 
         } catch (Exception e) {
             System.out.println(e.toString());
