@@ -20,9 +20,9 @@ public class FileDataPersistenceTest extends TestCase {
     public void setUp() throws Exception {
         super.setUp();
 
-        Student student = new Student("asdf4455", "mircea bravo", 933);
+        //Student student = new Student("asdf4455", "mircea bravo", 933);
         //ctrl.saveStudent(student);
-        Laboratory laboratory = new Laboratory(10,"11/12/2017", 2, "asdf4455");
+        //Laboratory laboratory = new Laboratory(10,"11/12/2017", 2, "asdf4455");
         //ctrl.saveLaboratory(laboratory);
 
     }
