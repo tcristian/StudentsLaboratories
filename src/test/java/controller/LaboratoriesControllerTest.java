@@ -34,9 +34,11 @@ public class LaboratoriesControllerTest extends TestCase {
 
         Student s1 = new Student("asdf1234", "Pop Alex", 935);
         Laboratory l1 = new Laboratory(1,"02/05/2018",1, "asdf1234");
-
-        ctrl.addGrade("asdf1234", "1", 5);
-
+        Student s2 = new Student("a", "11111", 945);
+        ctrl.addGrade(s1.getRegNumber(), "1", 5);
+        ctrl.addGrade(s2.getRegNumber(), "0", 11);
+        ctrl.addGrade(s1.getRegNumber(), "0", 10);
+        ctrl.addGrade(s1.getRegNumber(), "3", 11);
 
     }
 
