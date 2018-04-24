@@ -4,6 +4,9 @@ import junit.framework.TestCase;
 import model.Laboratory;
 import model.Student;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 /**
  * Created by Alex on 20.03.2018.
  */

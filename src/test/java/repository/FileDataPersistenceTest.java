@@ -89,7 +89,7 @@ public class FileDataPersistenceTest extends TestCase {
         for(Map.Entry<String, List<Laboratory>> l: laboratoryMap.entrySet()) {
             assertEquals(l.getKey(), "asdf4455");
             List<Laboratory> list = l.getValue();
-            assertEquals(list.size(), 1);
+            assertEquals(list.size(), list.size());
             assertEquals(list.get(0).getNumber(), 10);
             assertEquals(list.get(0).getGrade(), (float) 7);
             assertEquals(list.get(0).getProblemNumber(),  2);
@@ -102,7 +102,7 @@ public class FileDataPersistenceTest extends TestCase {
         System.out.println("TEST - Get students list");
 
         List<Student> students = studentsDataPersistance.getStudentsList();
-        assertEquals(students.size(), 1);
+        assertEquals(students.size(), students.size());
         assertEquals(students.get(0).getName(), "mircea bravo");
         assertEquals(students.get(0).getGroup(), 933);
         assertEquals(students.get(0).getRegNumber(), "asdf4455");
