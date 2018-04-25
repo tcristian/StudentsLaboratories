@@ -68,12 +68,24 @@ public class LaboratoriesControllerTest extends TestCase {
         Laboratory l1 = new Laboratory(1,"02/05/2018",1, "asdf1234");
         Student s2 = new Student("a", "11111", 945);
         List<Student> l = ctrl.passedStudents();
-        assertEquals(l.size(), l.size());
         assertFalse(l.size() == 30);
-
+        assertTrue(l.size() >= 0)
+;
     }
 
     public void testBigBang() throws Exception{
+        testSaveStudent();
+        testAddGrade();
+        testPassedStudents();
+
+    }
+
+    /***** ----- hmwork ------- *****/
+    public void testMethB() throws Exception {
+        testSaveStudent();
+        testAddGrade();
+    }
+    public void testMethC() throws Exception {
         testSaveStudent();
         testAddGrade();
         testPassedStudents();
